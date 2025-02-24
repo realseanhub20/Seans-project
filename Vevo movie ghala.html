@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vevo Movie Ghala</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #ff4500;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #ff6347;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    section {
+      padding: 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vevo Movie Ghala</h1>
+    <nav>
+      <button onclick="navigate('home')">Home</button>
+      <button onclick="navigate('library')">Library</button>
+      <button onclick="navigate('reviews')">Reviews</button>
+      <button onclick="navigate('watchlist')">Watchlist</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/vevo-movie-ghala.png" alt="Vevo Movie Ghala">
+  </section>
+
+  <section id="home" class="active">
+    <h2>Welcome to Vevo Movie Ghala!</h2>
+    <p>Discover the latest blockbusters, timeless classics, and hidden gems.</p>
+  </section>
+
+  <section id="library">
+    <h2>Movie Library</h2>
+    <p>Browse through our extensive collection of movies.</p>
+  </section>
+
+  <section id="reviews">
+    <h2>User Reviews</h2>
+    <p>Read what others are saying about your favorite movies.</p>
+  </section>
+
+  <section id="watchlist">
+    <h2>Your Watchlist</h2>
+    <p>Manage and keep track of the movies you want to watch.</p>
+  </section>
+
+  <script>
+    function navigate(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
